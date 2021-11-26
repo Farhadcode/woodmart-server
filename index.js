@@ -78,6 +78,7 @@ async function run() {
             const products = await cursor.toArray();
             res.send(products);
         })
+        //all 
 
         // status update
         app.put("/statusUpdate/:id", async (req, res) => {
