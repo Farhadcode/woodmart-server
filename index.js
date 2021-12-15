@@ -50,6 +50,12 @@ async function run() {
 
         })
 
+        app.get('/users', async (req, res) => {
+            const cursor = usersCollection.find({});
+            const users = await cursor.toArray();
+            res.send(users);
+        })
+
 
         app.put('/users', async (req, res) => {
             const user = req.body;
@@ -78,7 +84,7 @@ async function run() {
             const products = await cursor.toArray();
             res.send(products);
         })
-        //all 
+
 
         // status update
         app.put("/statusUpdate/:id", async (req, res) => {
